@@ -1,40 +1,26 @@
-import sys, os, time, math
+import sys, os, time, math, re
 from pyDF import *
+
 sys.path.append(os.environ['PYDFHOME'])
 	
-def readFile(args):
-	filename = args[0]
-	f = open(filename, "r")
-
-	vector = []
-
-	for line in f:
-		vector.append(line)
-
-	f.close()
-
-	return nprocs, vector
+regex = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
 
 def filterMails(args):
-	sp1 = args			
-		
-	sp = sp1[0].split("@")
 	
-	if len(sp) == 2:
-		aux = sp[1][:-1]
+	sp = args[0]
 
-		if(aux == "gmail.com"):				
-			ret = sp1[0][:-1]
-		else:
-			ret = ""
-	else:
-		ret = ""
+	if re.search(regex, sp):
 
-	
-	return ret
+        	return sp[:-1]
+
+    	else:
+
+        	return ""
 
 def printMails(args):
+
 	if args[0] != "":
+	
 		print args[0]
 
 
