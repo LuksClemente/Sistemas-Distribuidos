@@ -35,7 +35,7 @@ fp = open(filename, "r")
 src = Source(fp)
 graph.add(src)
 
-nd = FilterTagged(filterSites 1)
+nd = FilterTagged(filterSites, 1)
 graph.add(nd)
 
 ser = Serializer(printSites, 1)
