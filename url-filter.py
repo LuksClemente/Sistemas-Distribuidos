@@ -7,7 +7,7 @@ regex = '(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]
 
 def filterSites(args):
 	
-	sp = args[0]
+    sp = args[0]
 
     if re.search(regex, sp):
 
@@ -19,9 +19,9 @@ def filterSites(args):
 
 def printSites(args):
 	
-	if args[0] != "":
+    if args[0] != "":
 		
-		print args[0]
+        print args[0]
 
 
 nprocs = int(sys.argv[1])
